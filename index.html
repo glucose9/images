@@ -8,6 +8,7 @@
   * { margin: 0; padding: 0; box-sizing: border-box; }
   body {
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
     min-height: 100vh;
@@ -15,22 +16,35 @@
   }
   img {
     max-width: 100%;
-    max-height: 100vh;
+    max-height: 80vh;
     object-fit: contain;
+  }
+  .text {
+    margin-top: 20px;
+    font-size: 2rem;
+    font-weight: bold;
+    color: #333;
+    font-family: 'Apple SD Gothic Neo', 'Malgun Gothic', sans-serif;
   }
 </style>
 </head>
 <body>
 <img id="randomImg" alt="image">
+<div id="caption" class="text"></div>
 <script>
-  const images = [
+  const losers = [
     "img1.png","img2.png","img3.png","img4.png","img5.png",
     "img6.png","img7.png","img8.png","img9.png","img10.png",
     "img11.png","img12.png","img13.png","img14.png","img15.png",
-    "img16.png","img20.png"
+    "img16.png"
   ];
-  const pick = images[Math.floor(Math.random() * images.length)];
+  const winners = ["img20.png"];
+  const all = losers.concat(winners);
+  const pick = all[Math.floor(Math.random() * all.length)];
   document.getElementById("randomImg").src = pick;
+  if (losers.includes(pick)) {
+    document.getElementById("caption").textContent = "꽝이네요ㅜㅜ";
+  }
 </script>
 </body>
 </html>
