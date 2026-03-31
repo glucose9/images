@@ -30,6 +30,7 @@
 </head>
 <body>
 <img id="randomImg" alt="image">
+<div id="kkwang" class="text" style="font-size:3rem;color:#e74c3c;"></div>
 <div id="caption" class="text"></div>
 <script>
   const losers = [
@@ -145,6 +146,7 @@
       "생각을 바꾸면 행동이 바뀌고, 결국 인생이 바뀐다."
     ];
     const msg = messages[Math.floor(Math.random() * messages.length)];
+    document.getElementById("kkwang").textContent = "꽝";
     document.getElementById("caption").textContent = msg;
   }
 </script>
